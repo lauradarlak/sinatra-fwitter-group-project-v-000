@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     if session[:user_id] == nil
       erb :'users/create_user'
     else redirect '/tweets'
+    end
   end
 
   post '/signup' do
