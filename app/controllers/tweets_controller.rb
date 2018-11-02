@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
   post '/tweets' do
     if logged_in? && params[:content].present?
       user = current_user
-      tweet = Tweet.create(content: params[:content], user_id: user.id)
+      tweet = Tweet.create(content: params[:content], user_id: params[:user_id])
       tweet.user_id = user.id
       tweet.save
       redirect "/tweet/#{tweet.id}"
