@@ -5,9 +5,10 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    @user = User.new (name: params[:name], email: params[:email], password: params[:password])
+    @user = User.new (name: params["name"], email: params["email"], password: params["password"])
     @user.save
     session[:id] = @user.id
+
   end
 
 end
