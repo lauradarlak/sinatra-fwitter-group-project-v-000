@@ -11,8 +11,12 @@ class UsersController < ApplicationController
     redirect '/tweets'
   end
 
-  get 'login' do
+  get '/login' do
     erb :'users/login'
+  end
+
+  post '/login' do
+    
   end
 
 end
