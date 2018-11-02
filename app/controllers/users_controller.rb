@@ -21,4 +21,6 @@ class UsersController < ApplicationController
     redirect '/tweets'
   end
 
+  
+
 end
