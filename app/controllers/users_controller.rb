@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    puts params
+    @user = User.new (name: params[:name], email: params[:email], password: params[:password])
+    @user.save
   end
 
 end
