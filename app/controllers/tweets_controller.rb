@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    if logged_in? && !params[:content].empty?
+    if logged_in? && params[:content] != "''"
       user = current_user
       tweet = Tweet.create(content: params[:content])
       tweet.user_id = user.id
