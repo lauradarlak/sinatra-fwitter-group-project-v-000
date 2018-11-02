@@ -13,11 +13,13 @@ class TweetsController < ApplicationController
 
   post '/tweets' do
     if logged_in? && !params[:content].empty?
-    @user = current_user
-    @tweet = Tweet.create(content: params[:content], user_id: params[:user_id])
-    @tweet.user_id = @user.id
-    @tweet.save
-    redirect "/tweet/#{@tweet.id}"
+      user = current_user
+      @tweet = Tweet.create(content: params[:content])
+      tweet.user_id = user.id
+      @tweet.save
+      redirect "/tweet/#{@tweet.id}"
+    else redirect '/tweets/new'
+    end
   end
 
   get '/tweets/:id' do
