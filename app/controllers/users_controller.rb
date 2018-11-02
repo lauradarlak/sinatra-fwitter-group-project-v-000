@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     if @user != nil && @user.password == params["password"]
       session[:user_id] = @user.id
       redirect '/tweets'
+    else redirect '/signup'
     end
   end
 
