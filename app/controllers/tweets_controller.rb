@@ -11,8 +11,12 @@ class TweetsController < ApplicationController
 
   end
 
-  get '/tweets/new' do
 
+
+  get '/tweets/new' do
+    erb :'tweets/new'
   end
+
+
 
 end
