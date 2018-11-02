@@ -8,7 +8,8 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/new' do
-    erb :'tweets/new'
+    if logged_in?
+      erb :'tweets/new'
   end
 
   post '/tweets' do
