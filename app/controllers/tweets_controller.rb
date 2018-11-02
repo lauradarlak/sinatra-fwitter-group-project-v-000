@@ -8,7 +8,8 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-
+    @tweet = Tweet.create(content: params[:content])
+    redirect "/tweet/#{@tweet.id}"
   end
 
 
