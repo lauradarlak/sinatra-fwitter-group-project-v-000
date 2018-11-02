@@ -26,10 +26,4 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/tweets' do
-    @user = User.find(session[:id])
-    erb :'tweets/tweets'
-  end
-
-
 end
